@@ -1,0 +1,62 @@
+input[type="button"] {
+  cursor: pointer;
+}
+
+input[type="radio"]:checked {
+  /* accent-color: gray; */
+}
+
+input[type="radio"]:not(:checked):not(:disabled) {
+  margin-bottom: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.colors {
+  appearance: none;
+  background: purple;
+  accent-color: purple;
+}
+
+.colors:checked {
+  appearance: auto;
+}
+
+.colors.black {
+  background: black;
+  accent-color: black;
+}
+
+.colors.blue {
+  background: blue;
+  accent-color: blue;
+}
+
+.colors.red {
+  background: red;
+  accent-color: red;
+}
+
+.colors.green {
+  background: green;
+  accent-color: green;
+}
+
+.colors.white {
+  background: rgb(233, 230, 230);
+  accent-color: white;
+}
+
+input[type="radio"]:not(:checked):not(:disabled) {
+  border-radius: 100px;
+}
+
+/* * {
+  font-family: sans-serif;
+} */
+
+input[type="radio"],
+label {
+  cursor: pointer;
+  user-select: none;
+}
