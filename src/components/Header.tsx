@@ -6,10 +6,8 @@ const Header = () => {
 
   const handleSearchTermChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = (e.target as HTMLInputElement).value.trim();
-    
-    if (value) {
-      hanldeFilterBy("searchTerm", value);
-    }
+
+    hanldeFilterBy("searchTerm", value);
   };
 
   return (

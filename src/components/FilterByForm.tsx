@@ -19,15 +19,15 @@ const FilterByForm = ({ name }: { name: string }) => {
 
     if (name === "colors") {
       colorsClass = "colors";
-      if (category === "Blue") {
+      if (category === "blue") {
         colorsClass += " blue";
-      } else if (category === "Black") {
+      } else if (category === "black") {
         colorsClass += " black";
-      } else if (category === "Red") {
+      } else if (category === "red") {
         colorsClass += " red";
-      } else if (category === "Green") {
+      } else if (category === "green") {
         colorsClass += " green";
-      } else if (category === "White") {
+      } else if (category === "white") {
         colorsClass += " white";
       }
     }
