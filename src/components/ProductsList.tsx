@@ -1,6 +1,6 @@
 import { useContextHook } from "../context/useContextHook";
 import { data } from "../data";
-import { ProductType } from "../types";
+import { FilterBy, ProductType } from "../types";
 import Icon from "./Icon";
 
 const ProductsList = () => {
@@ -9,13 +9,16 @@ const ProductsList = () => {
   const handleFilter = (
     filteredValue: string,
     product: ProductType,
-    filterBy: string
+    filterBy: FilterBy
   ) => {
     if (filteredValue === "all" || filteredValue === "All Products")
       return true;
-    if (filterBy === "category") return product.category === filteredValue;
-    else if (filterBy === "color") return product.color === filteredValue;
-    else if (filterBy === "company") return product.company === filteredValue;
+    if (filterBy === FilterBy.category)
+      return product.category === filteredValue;
+    else if (filterBy === FilterBy.color)
+      return product.color === filteredValue;
+    else if (filterBy === FilterBy.company)
+      return product.company === filteredValue;
   };
 
   const handleSearchTerm = (title: string, searchTerm: string) =>
@@ -45,9 +48,9 @@ const ProductsList = () => {
 
   const filteredProducts = data.filter(
     (product) =>
-      handleFilter(filterBy.category, product, "category") &&
-      handleFilter(filterBy.colors, product, "color") &&
-      handleFilter(filterBy.company, product, "company") &&
+      handleFilter(filterBy.category, product, FilterBy.category) &&
+      handleFilter(filterBy.colors, product, FilterBy.color) &&
+      handleFilter(filterBy.company, product, FilterBy.company) &&
       handleSearchTerm(product.title, filterBy.searchTerm) &&
       handleFilterByPrice(product.newPrice, filterBy.price)
   );

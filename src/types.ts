@@ -25,3 +25,10 @@ export type ProductType = {
   color: string;
   category: string;
 };
+
+export enum FilterBy {
+  category,
+  price,
+  color,
+  company,
+}
