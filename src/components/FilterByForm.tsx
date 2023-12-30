@@ -47,7 +47,7 @@ const FilterByForm = ({ name }: { name: string }) => {
           const colorsClass = assignColorClasses(name, category);
 
           return (
-            <div key={category}>
+            <div className="flex items-center" key={category}>
               <input
                 defaultChecked={category === "all"}
                 className={colorsClass}
