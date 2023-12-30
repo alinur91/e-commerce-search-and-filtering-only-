@@ -4,10 +4,13 @@ import { FilterByTypes } from "../types";
 interface FilterByContextType {
   filterBy: FilterByTypes;
   hanldeFilterBy: (key: string, value: string) => void;
+  toggleShowSideBar: () => void;
+  showSideBar: boolean;
 }
 
 export const Context = createContext<FilterByContextType>({
   hanldeFilterBy: () => undefined,
+  toggleShowSideBar: () => undefined,
   filterBy: {
     category: "All",
     price: "All",
@@ -15,6 +18,7 @@ export const Context = createContext<FilterByContextType>({
     company: "All",
     searchTerm: "",
   },
+  showSideBar: false,
 });
 
 export const useContextHook = () => {

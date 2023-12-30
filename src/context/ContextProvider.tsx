@@ -10,12 +10,18 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     searchTerm: "",
   });
 
+  const [showSideBar, setShowSideBar] = useState(false);
+
   const hanldeFilterBy = (key: string, value: string) => {
     setFilterBy((filterByObj) => ({ ...filterByObj, [key]: value }));
   };
 
+  const toggleShowSideBar = () => setShowSideBar((val) => !val);
+
   return (
-    <Context.Provider value={{ hanldeFilterBy, filterBy }}>
+    <Context.Provider
+      value={{ hanldeFilterBy, filterBy, showSideBar, toggleShowSideBar }}
+    >
       {children}
     </Context.Provider>
   );
